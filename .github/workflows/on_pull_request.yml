@@ -1,6 +1,6 @@
 name: On Pull Request Build package
 
-on: pull_request
+on: push
 
 env:
     JAVA_VERSION: "1.8"
