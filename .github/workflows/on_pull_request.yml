@@ -1,0 +1,19 @@
+name: On Pull Request Build package
+
+on: pull_request
+
+env:
+    JAVA_VERSION: "1.8"
+
+jobs:
+  build-and-deploy:
+    name: build and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: java version
+        run: java -version
